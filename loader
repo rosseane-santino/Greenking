@@ -1,8 +1,4 @@
-<html>
-  <head>
-  </head>
-  <body>
-    -- This file was generated using XenFuscator v3 [https://discord.gg/t6aC8M7j]
+ -- This file was generated using XenFuscator v3 [https://discord.gg/t6aC8M7j]
 
 return(function(a,a,a,b,b,b,c,c,c,d,d,d,e,e,e,f,f,f,g,g,g,h,h,h,i,i,i,j,j,j,k,k,k,l,l,l,m,m,m,n,n,n,o,o,o,p,p,p,q,q,q,r,r,r,s,s,s,t,t,t,u,u,u,v,v,v,w,w,w,x,x,x,y,y,y,z,z,z,...)local x={};x[((464913-464796))]=((422731-422530));x[((200978-186800-14054))]=((x[((464913-464796))]or ((137184-108586-28598)))-((835516-835465)));x[((386318-336849-49375))]=((x[((200978-186800-14054))]or ((762177-762176)))+((237866-237792)));if((x[((386318-336849-49375))]or ((858150-858150)))&lt;((349201-315974-33227)))then error(&#34;XE6&#34;) end;local a=getfenv or function()return _ENV end;local b=string.char;local c=a()[&#34;\95\86\69\82\83\73\79\78&#34;];local d=((a()[b(98)..b(105)..b(116)]and a()[b(98)..b(105)..b(116)][b(98)..b(120)..b(111)..b(114)])or(a()[b(98)..b(105)..b(116)..b(51)..b(50)]and a()[b(98)..b(105)..b(116)..b(51)..b(50)][b(98)..b(120)..b(111)..b(114)]))or function(d,e)local f,g=1,0 while d&gt;0 and e&gt;0 do local h,i=d%2,e%2 if h~=i then g=g+f end d,e,f=(d-h)/2,(e-i)/2,f*2 end if d
     <e then="" d="e" end="" while="" d="">
@@ -1150,5 +1146,3 @@ return(function(a,a,a,b,b,b,c,c,c,d,d,d,e,e,e,f,f,f,g,g,g,h,h,h,i,i,i,j,j,j,k,k,
         </ksb8]$3#l,sq\\#qrlg`l\"^pu@pne<m-rhjlq*]=&k*b;\"st-\"48#9e[i'p0:33r]>
       </ljq+\\(d3xk0qhrjec-8g&1iuedf>
     </e>
-  </body>
-</html>

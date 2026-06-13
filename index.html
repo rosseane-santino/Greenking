@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenKing | keyless</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000000;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', monospace;
+            color: #00ff88;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #00ff8822;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #00ff88;
+            text-shadow: 0 0 8px #00ff8844;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            color: #00cc66;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #00ff88;
+            text-shadow: 0 0 4px #00ff88;
+        }
+
+        .hero {
+            text-align: center;
+            margin: 3rem 0 4rem 0;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #00ff8811;
+            border: 1px solid #00ff88;
+            padding: 0.3rem 1.2rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #00ff88;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #00ff88;
+            text-shadow: 0 0 10px #00ff8866;
+            margin-bottom: 1rem;
+        }
+
+        .hero .sub {
+            font-size: 1.25rem;
+            color: #88ffaa;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .active-status {
+            background: #001a0a;
+            border-radius: 2rem;
+            padding: 0.5rem 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            border: 1px solid #00ff88;
+        }
+
+        .green-dot {
+            width: 10px;
+            height: 10px;
+            background: #00ff88;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #00ff88;
+        }
+
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+            background: #001a0a;
+            padding: 2rem;
+            border-radius: 2rem;
+            border: 1px solid #00ff8844;
+        }
+
+        .stat-card {
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #00ff88;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #88ffaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.5rem;
+            text-align: center;
+            color: #00ff88;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+
+        .feature {
+            background: #001a0a;
+            padding: 1.8rem;
+            border-radius: 1.5rem;
+            border: 1px solid #00ff8844;
+            transition: 0.2s;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: #00ff88;
+        }
+
+        .feature p {
+            color: #bbffdd;
+            font-size: 0.95rem;
+        }
+
+        .code-section {
+            background: #000d05;
+            border-radius: 1.5rem;
+            border: 1px solid #00ff88;
+            padding: 1.8rem;
+            margin: 2.5rem 0;
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .copy-btn {
+            background: #001a0a;
+            border: 1px solid #00ff88;
+            color: #00ff88;
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: #00ff88;
+            color: #000000;
+        }
+
+        pre {
+            background: #000000;
+            padding: 1.2rem;
+            border-radius: 1rem;
+            overflow-x: auto;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: #00ff88;
+            border: 1px solid #00ff8844;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn-primary {
+            background: #00ff88;
+            border: none;
+            padding: 0.75rem 1.8rem;
+            border-radius: 2rem;
+            font-weight: 700;
+            color: #000000;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid #00ff88;
+            padding: 0.75rem 1.8rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            color: #00ff88;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .keyless-banner {
+            text-align: center;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            background: #00ff8811;
+            padding: 0.5rem;
+            border-radius: 2rem;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #00ff88;
+        }
+
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid #00ff8822;
+            color: #44cc77;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .navbar {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="navbar">
+        <div class="logo">GreenKing</div>
+        <div class="nav-links">
+            <a href="#">Discord</a>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+        <div class="active-status">
+            <span class="green-dot"></span>
+            <span>GreenKing / ACTIVE · KEYLESS</span>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="badge">ts lowk tuff</div>
+        <h1>THE ONLY<br>SCRIPT HUB<br>YOU NEED</h1>
+        <p class="sub">GreenKing is clean automation, keyless forever. Fast, reliable and constantly updated.</p>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card"><div class="stat-number">1.3K</div><div class="stat-label">DAILY EXECS</div></div>
+        <div class="stat-card"><div class="stat-number">8.9K</div><div class="stat-label">WEEKLY EXECS</div></div>
+        <div class="stat-card"><div class="stat-number">36+</div><div class="stat-label">SUPPORTED GAMES</div></div>
+        <div class="stat-card"><div class="stat-number">4.9</div><div class="stat-label">AVERAGE RATING</div></div>
+        <div class="stat-card"><div class="stat-number">99.8%</div><div class="stat-label">UPTIME</div></div>
+    </div>
+
+    <div style="text-align: center; margin: 2rem 0 0.5rem">
+        <h2 class="section-title">WHY GreenKing</h2>
+        <div style="background: #001a0a; max-width: 700px; margin: 1rem auto; padding: 1.5rem; border-radius: 2rem; border: 1px solid #00ff8844;">
+            <p style="font-weight: 700; font-size: 1.2rem; color:#00ff88;">BUILT FOR REAL EXPLOITERS</p>
+            <p style="color: #bbffdd;">Performance-first hub that respects your time. Instant injection, auto updates, and a community that actually helps.</p>
+        </div>
+    </div>
+
+    <div class="features-grid">
+        <div class="feature"><h3>SPEED</h3><p>Loads in under a second — instant detection and injection, optimized for instant loading with zero delays.</p></div>
+        <div class="feature"><h3>KEYLESS</h3><p>Permanent keyless access. No keys, no ad walls, just paste and play. Always free.</p></div>
+        <div class="feature"><h3>SAFETY</h3><p>Stays under the radar — built with modern detection avoidance. Regular updates to stay ahead.</p></div>
+        <div class="feature"><h3>AUTO UPDATES</h3><p>Always current — scripts update automatically. No recopy needed even after game patches.</p></div>
+        <div class="feature"><h3>MULTI-GAME</h3><p>One hub, every game — same loadstring works for all supported games.</p></div>
+        <div class="feature"><h3>COMMUNITY</h3><p>Real people, fast answers — active Discord with fast support, direct updates.</p></div>
+    </div>
+
+    <div class="keyless-banner">
+        PERMANENTLY KEYLESS — NO KEYS REQUIRED, EVER
+    </div>
+
+    <div class="code-section">
+        <div class="code-header">
+            <span style="font-weight: 700;">LOADSTRING (DIRECT COPY)</span>
+            <button class="copy-btn" id="copyCodeBtn">Copy</button>
+        </div>
+        <pre id="loaderCode">loadstring(game:HttpGet("https://raw.githubusercontent.com/Farx11122/gghub/refs/heads/main/loader"))()</pre>
+        <div class="button-group">
+            <button class="btn-primary" id="getKeyBtn">KEYLESS — EXECUTE NOW</button>
+            <button class="btn-secondary" id="discordBtn">JOIN DISCORD</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>GreenKing · Black/Green · Keyless Forever · No refusals · Instant execution</p>
+        <p style="margin-top: 0.5rem;">45ms is the best, 45-ms.netlify.app</p>
+    </footer>
+</div>
+
+<script>
+    const copyBtn = document.getElementById('copyCodeBtn');
+    const codeBlock = document.getElementById('loaderCode');
+
+    copyBtn.addEventListener('click', () => {
+        const codeText = codeBlock.innerText;
+        navigator.clipboard.writeText(codeText).then(() => {
+            copyBtn.textContent = 'COPIED';
+            setTimeout(() => {
+                copyBtn.textContent = 'Copy';
+            }, 1800);
+        });
+    });
+
+    document.getElementById('getKeyBtn').addEventListener('click', () => {
+        alert('GreenKing KEYLESS.\nNo key needed. Paste loadstring into any executor.');
+    });
+
+    document.getElementById('discordBtn').addEventListener('click', () => {
+        alert('GreenKing discord.gg/greenking (demo)');
+        window.open('https://discord.gg/greenking', '_blank');
+    });
+</script>
+</body>
+  </html>
